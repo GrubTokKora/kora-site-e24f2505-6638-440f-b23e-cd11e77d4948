@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connie Stetler – Premier Real Estate Agent in NY & CT</title>
+    <meta name="description" content="Connie Stetler is a top real estate agent specializing in properties across Westchester, Putnam, and Fairfield Counties. Your home, your move, your way.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Connie Stetler – Premier Real Estate Agent in NY & CT">
+    <meta property="og:description" content="Connie Stetler is a top real estate agent specializing in properties across Westchester, Putnam, and Fairfield Counties. Your home, your move, your way.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://static.wixstatic.com/media/ccf3fb_f3378c90544e4280ba2bd73b1331a4d2~mv2.png/v1/fill/w_395,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo.png">
+    <meta property="og:url" content="https://www.conniestetlerhomes.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://static.wixstatic.com/media/ccf3fb_f3378c90544e4280ba2bd73b1331a4d2~mv2.png/v1/fill/w_395,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo.png">
+    <link rel="shortcut icon" href="https://static.wixstatic.com/media/ccf3fb_f3378c90544e4280ba2bd73b1331a4d2~mv2.png/v1/fill/w_395,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo.png">
+    <link rel="apple-touch-icon" href="https://static.wixstatic.com/media/ccf3fb_f3378c90544e4280ba2bd73b1331a4d2~mv2.png/v1/fill/w_395,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo.png">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.conniestetlerhomes.com/">
+
+    <!-- Hero image preload -->
+    <link rel="preload" as="image" href="https://static.wixstatic.com/media/ccf3fb_b9833cca2d1e4e309383471bed1ec745~mv2.webp/v1/fill/w_1280,h_730,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ccf3fb_b9833cca2d1e4e309383471bed1ec745~mv2.webp">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Connie Stetler",
+      "description": "Connie Stetler is a licensed associate broker with over three decades of real estate experience in Westchester, Putnam, and Fairfield Counties, NY & CT. Specializing in waterfront properties, she guides clients through buying, renovating, and selling homes with a strategic, comprehensive approach.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "78 Purchase St",
+        "addressLocality": "Rye",
+        "addressRegion": "NY",
+        "postalCode": "10580",
+        "addressCountry": "US"
+      },
+      "telephone": "+19149802402",
+      "email": "ConnieStetler@Raveis.com",
+      "openingHours": [
+        "Mo-Fr 07:30-21:00",
+        "Sa 07:30-19:00",
+        "Su 09:00-18:00"
+      ],
+      "image": "https://static.wixstatic.com/media/ccf3fb_f3378c90544e4280ba2bd73b1331a4d2~mv2.png/v1/fill/w_395,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo.png",
+      "url": "https://www.conniestetlerhomes.com/",
+      "review": [
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "author": { "@type": "Person", "name": "Arlene Gonzalez-Pagan" }, "reviewBody": "Connie is truly one of a kind! We couldn’t have asked for a better realtor to guide us through the sale of our condo. Thanks to her expertise and strategic approach, we had an offer during our very first open house!" },
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "author": { "@type": "Person", "name": "Shelly A" }, "reviewBody": "Connie is truly exceptional. Over the years, she has expertly guided me through multiple real estate transactions, both buying and selling. Her extensive knowledge, unwavering professionalism, and remarkable patience set her apart." }
+      ]
+    }
+    </script>
+
+    <!-- Tailwind + Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Lato', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#1a2c42',
+                        'brand-gold': '#c5a47e',
+                        'brand-light': '#f4f4f4',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-blue font-sans">
+
+    <script>
+        window.KORA_SITE_CONFIG = {
+            apiBaseUrl: "",
+            businessId: "e24f2505-6638-440f-b23e-cd11e77d4948",
+            recaptchaSiteKey: ""
+        };
+    </script>
+
+    <!-- Header -->
+    <header id="home" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="flex items-center">
+                <img src="https://static.wixstatic.com/media/ccf3fb_f3378c90544e4280ba2bd73b1331a4d2~mv2.png/v1/fill/w_395,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo.png" alt="Connie Stetler Logo" class="h-12 w-auto">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-700 hover:text-brand-gold transition-colors">About</a>
+                <a href="#services" class="text-gray-700 hover:text-brand-gold transition-colors">Services</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-brand-gold transition-colors">Testimonials</a>
+                <a href="#contact" class="text-gray-700 hover:text-brand-gold transition-colors">Contact</a>
+            </nav>
+            <a href="https://www.conniestetlerhomes.com/appt-with-me" target="_blank" class="hidden md:inline-block bg-brand-gold text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">Book Appointment</a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-700 hover:text-brand-gold">About</a>
+            <a href="#services" class="block py-2 text-gray-700 hover:text-brand-gold">Services</a>
+            <a href="#testimonials" class="block py-2 text-gray-700 hover:text-brand-gold">Testimonials</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-brand-gold">Contact</a>
+            <a href="https://www.conniestetlerhomes.com/appt-with-me" target="_blank" class="block mt-4 bg-brand-gold text-white text-center px-6 py-2 rounded-md hover:bg-opacity-90">Book Appointment</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[70vh] min-h-[500px] flex items-center justify-center text-white text-center hero-overlay">
+            <img src="https://static.wixstatic.com/media/ccf3fb_b9833cca2d1e4e309383471bed1ec745~mv2.webp/v1/fill/w_1280,h_730,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ccf3fb_b9833cca2d1e4e309383471bed1ec745~mv2.webp" 
+                 alt="Beautiful modern home exterior" 
+                 class="absolute inset-0 w-full h-full object-cover"
+                 loading="eager" fetchpriority="high" decoding="async" width="1280" height="730">
+            <div class="relative z-10 px-6">
+                <h1 class="font-serif text-4xl md:text-6xl font-bold">Connie Stetler</h1>
+                <p class="mt-4 text-xl md:text-2xl font-light">Your Home. Your Move. Your Way.</p>
+                <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="bg-brand-gold text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-colors text-lg">Get a Free Home Estimate</a>
+                    <a href="#about" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md hover:bg-white hover:text-brand-blue transition-colors text-lg">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://static.wixstatic.com/media/ccf3fb_197f9c5a5aaa43d2b111c0b496efc233~mv2.jpg/v1/fill/w_528,h_785,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Photo.jpg" alt="Portrait of Connie Stetler" class="rounded-lg shadow-xl w-full max-w-md mx-auto" loading="lazy">
+                    </div>
+                    <div>
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-blue">Guiding You Home</h2>
+                        <p class="text-brand-gold mt-2 text-lg">Westchester, Putnam & Fairfield Counties, NY & CT</p>
+                        <p class="mt-6 text-gray-600 leading-relaxed">Connie Stetler is a licensed associate broker with over three decades of real estate experience. Specializing in waterfront properties, she guides clients through buying, renovating, and selling homes with a strategic, comprehensive approach.</p>
+                        <p class="mt-4 text-gray-600 leading-relaxed">Her background in construction and deep community connection provide a unique advantage, ensuring a seamless and successful real estate experience from start to finish.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold">Our Services</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">A comprehensive approach to meet all your real estate needs.</p>
+                <div class="mt-12 grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+                        <i data-lucide="home" class="w-12 h-12 mx-auto text-brand-gold"></i>
+                        <h3 class="font-serif text-xl font-bold mt-4">Buying Homes</h3>
+                        <p class="mt-2 text-gray-600">Expert guidance to find and secure your dream home at the best possible price.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+                        <i data-lucide="tag" class="w-12 h-12 mx-auto text-brand-gold"></i>
+                        <h3 class="font-serif text-xl font-bold mt-4">Selling Homes</h3>
+                        <p class="mt-2 text-gray-600">Strategic marketing and negotiation to sell your property quickly and profitably.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+                        <i data-lucide="ruler" class="w-12 h-12 mx-auto text-brand-gold"></i>
+                        <h3 class="font-serif text-xl font-bold mt-4">Property Estimates</h3>
+                        <p class="mt-2 text-gray-600">Considering selling? Get a free, accurate evaluation of your home's current market value.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-brand-blue text-white">
+            <div class="container mx-auto px-6">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-center">What Our Clients Say</h2>
+                <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white/10 p-6 rounded-lg">
+                        <p class="text-gray-200">"Connie is truly one of a kind! We couldn’t have asked for a better realtor... Thanks to her expertise and strategic approach, we had an offer during our very first open house!"</p>
+                        <p class="mt-4 font-bold text-brand-gold">- Arlene Gonzalez-Pagan</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg">
+                        <p class="text-gray-200">"Connie is truly exceptional. Her extensive knowledge, unwavering professionalism, and remarkable patience set her apart. Connie is always ready with clear answers to any question."</p>
+                        <p class="mt-4 font-bold text-brand-gold">- Shelly A</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg">
+                        <p class="text-gray-200">"She recently helped us purchase our first home. She is quick to respond, proactive, and has a strong sense of responsibility. I think good communicator is the most important... and she is the one."</p>
+                        <p class="mt-4 font-bold text-brand-gold">- Yoo Jin So</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-center">Featured Properties</h2>
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <img src="https://static.wixstatic.com/media/ccf3fb_9f4c7a2a3d504a8e81bb5daf7636939f~mv2.jpg/v1/fill/w_1200,h_561,al_c,q_85,enc_avif,quality_auto/ccf3fb_9f4c7a2a3d504a8e81bb5daf7636939f~mv2.jpg" alt="Exterior of a beautiful home" class="rounded-lg shadow-md object-cover w-full h-full" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/ccf3fb_cb5e0f6a1b7440ce9404b7a14195dc3c~mv2.webp/v1/fill/w_1280,h_659,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ccf3fb_cb5e0f6a1b7440ce9404b7a14195dc3c~mv2.webp" alt="Modern kitchen interior" class="rounded-lg shadow-md object-cover w-full h-full" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/ccf3fb_76a0c06343084461b59663fc809f408f~mv2.jpg/v1/fill/w_1280,h_1084,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ccf3fb_76a0c06343084461b59663fc809f408f~mv2.jpg" alt="Spacious living room" class="rounded-lg shadow-md object-cover w-full h-full" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/ccf3fb_3e679e0e8d0e4057a3d95a9fcb99738a~mv2.jpg/v1/fill/w_1280,h_579,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ccf3fb_3e679e0e8d0e4057a3d95a9fcb99738a~mv2.jpg" alt="Home with a pool" class="rounded-lg shadow-md object-cover w-full h-full" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/ccf3fb_ef3f0b85b0694c1595f1d78065a92cdc~mv2.webp/v1/fill/w_928,h_684,al_c,q_85,enc_avif,quality_auto/ccf3fb_ef3f0b85b0694c1595f1d78065a92cdc~mv2.webp" alt="Cozy bedroom interior" class="rounded-lg shadow-md object-cover w-full h-full" loading="lazy">
+                    <img src="https://quseprdus1.blob.core.windows.net/kora-business-images/user-media/e24f2505-6638-440f-b23e-cd11e77d4948/de8c94d8-887e-4625-825f-ec262dbc28df/1775651673_bo7gyv.jpg" alt="Waterfront property view" class="rounded-lg shadow-md object-cover w-full h-full" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-center">Get In Touch</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-center text-gray-600">Ready to start your real estate journey? Contact me today for a consultation or a free home estimate.</p>
+                <div class="mt-12 grid md:grid-cols-2 gap-12">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="font-serif text-2xl font-bold">Contact Information</h3>
+                        <div class="mt-6 space-y-4 text-gray-700">
+                            <p class="flex items-start"><i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-1 text-brand-gold"></i><span>78 Purchase St, Rye, NY 10580, USA</span></p>
+                            <p class="flex items-center"><i data-lucide="phone" class="w-5 h-5 mr-3 text-brand-gold"></i><a href="tel:+19149802402" class="hover:text-brand-gold">(914) 980-2402</a></p>
+                            <p class="flex items-center"><i data-lucide="mail" class="w-5 h-5 mr-3 text-brand-gold"></i><a href="mailto:ConnieStetler@Raveis.com" class="hover:text-brand-gold">ConnieStetler@Raveis.com</a></p>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mt-8">Business Hours</h3>
+                        <div class="mt-4 space-y-2 text-gray-700">
+                            <p><strong>Monday - Friday:</strong> 7:30 AM – 9:00 PM</p>
+                            <p><strong>Saturday:</strong> 7:30 AM – 7:00 PM</p>
+                            <p><strong>Sunday:</strong> 9:00 AM – 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="font-serif text-2xl font-bold">Send a Message</h3>
+                        <form id="contact-form" class="mt-6 space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-gold focus:border-brand-gold">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-gold focus:border-brand-gold">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-gold focus:border-brand-gold"></textarea>
+                            </div>
+                            <div id="recaptcha-container">
+                                <!-- reCAPTCHA will be inserted here if site key is available -->
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-brand-gold text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition-colors">Send Message</button>
+                            </div>
+                            <p id="form-message" class="text-center text-sm mt-4"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2024 Connie Stetler. All Rights Reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="https://www.instagram.com/conniestetler_realestate/" target="_blank" class="hover:text-brand-gold transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                    <a href="https://www.facebook.com/ConnieStetler.Realestate.Newyork/" target="_blank" class="hover:text-brand-gold transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    
+    <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
+    <script>
+        // Contact Form Submission
+        var recaptchaWidgetId;
+        function onRecaptchaLoad() {
+            var cfg = window.KORA_SITE_CONFIG || {};
+            var recaptchaContainer = document.getElementById('recaptcha-container');
+            if (cfg.recaptchaSiteKey && recaptchaContainer) {
+                recaptchaWidgetId = grecaptcha.render('recaptcha-container', {
+                    'sitekey' : cfg.recaptchaSiteKey
+                });
+            }
+        }
+
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            formMessage.textContent = '';
+            formMessage.classList.remove('text-green-500', 'text-red-500');
+
+            if (!name || !email || !message) {
+                formMessage.textContent = 'Please fill out all fields.';
+                formMessage.style.color = '#f87171';
+                return;
+            }
+
+            var cfg = window.KORA_SITE_CONFIG || {};
+            var apiBaseUrl = (cfg.apiBaseUrl || '').replace(/\/+$/, '');
+            var businessId = cfg.businessId;
+            var recaptchaSiteKey = cfg.recaptchaSiteKey;
+
+            if (!apiBaseUrl || !businessId) {
+                formMessage.textContent = 'Form is temporarily unavailable. Please try again later.';
+                formMessage.style.color = '#f87171';
+                return;
+            }
+            
+            var captchaToken = '';
+            if (recaptchaSiteKey) {
+                captchaToken = grecaptcha.getResponse(recaptchaWidgetId);
+                if (!captchaToken) {
+                    formMessage.textContent = 'Please complete the CAPTCHA.';
+                    formMessage.style.color = '#f87171';
+                    return;
+                }
+            } else {
+                // If no site key, we can't submit. This is a fallback message.
+                formMessage.textContent = 'Form submission is currently disabled.';
+                formMessage.style.color = '#f87171';
+                return;
+            }
+
+            formMessage.textContent = 'Sending...';
+            formMessage.style.color = '#c5a47e';
+
+            fetch(apiBaseUrl + '/api/v1/public/forms/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    business_id: businessId,
+                    form_type: 'contact',
+                    form_data: { name, email, message },
+                    submitter_email: email,
+                    captcha_token: captchaToken
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                formMessage.textContent = 'Thank you! Your message has been sent.';
+                formMessage.style.color = '#4ade80';
+                contactForm.reset();
+                if (recaptchaSiteKey) {
+                    grecaptcha.reset(recaptchaWidgetId);
+                }
+            })
+            .catch(error => {
+                formMessage.textContent = 'Something went wrong. Please try again.';
+                formMessage.style.color = '#f87171';
+                if (recaptchaSiteKey) {
+                    grecaptcha.reset(recaptchaWidgetId);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
