@@ -3,7 +3,7 @@ const HEADER_HTML = `
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-24">
             <a href="index.html" class="flex items-center space-x-3 group">
-                <img src="images/logo.png" alt="Connie Stetler Real Estate" class="h-12 w-auto transition-transform duration-300 group-hover:scale-105">
+                <img src="https://quseprdus1.blob.core.windows.net/kora-business-images/user-media/e24f2505-6638-440f-b23e-cd11e77d4948/de8c94d8-887e-4625-825f-ec262dbc28df/1775656767_w84dqn.jpeg" alt="Connie Stetler Real Estate" class="h-12 w-auto transition-transform duration-300 group-hover:scale-105">
             </a>
 
             <div class="hidden lg:flex items-center space-x-10">
@@ -44,7 +44,7 @@ const FOOTER_HTML = `
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
-                <img src="images/logo.png" alt="Connie Stetler" class="h-16 mb-6">
+                <img src="https://quseprdus1.blob.core.windows.net/kora-business-images/user-media/e24f2505-6638-440f-b23e-cd11e77d4948/de8c94d8-887e-4625-825f-ec262dbc28df/1775656767_w84dqn.jpeg" alt="Connie Stetler" class="h-16 mb-6">
                 <p class="text-gray-text font-poppins text-sm leading-relaxed mb-6">
                     Over 30 years of experience helping families find their dream homes in Westchester, Putnam, and Fairfield Counties.
                 </p>
@@ -98,8 +98,7 @@ const FOOTER_HTML = `
                 &copy; 2024 Connie Stetler Real Estate. All rights reserved.
             </p>
             <div class="flex items-center space-x-4">
-                <img src="images/eho_logo.png" alt="Equal Housing Opportunity" class="h-10">
-                <img src="images/william_raveis_logo_white.png" alt="William Raveis" class="h-8 bg-dark px-2 py-1 rounded">
+                <img src="https://quseprdus1.blob.core.windows.net/kora-business-images/user-media/e24f2505-6638-440f-b23e-cd11e77d4948/de8c94d8-887e-4625-825f-ec262dbc28df/1775656651_hx55ta.jpeg" alt="Equal Housing Opportunity" class="h-10">
             </div>
         </div>
     </div>
