@@ -46,6 +46,7 @@
     </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -170,6 +171,13 @@
     </style>
 </head>
 <body class="bg-white text-dark" data-page="appt">
+    <script>
+        window.KORA_SITE_CONFIG = {
+            apiBaseUrl: "https://kora-agent.grubtok.com",
+            businessId: "e24f2505-6638-440f-b23e-cd11e77d4948",
+            recaptchaSiteKey: "6LcsdJYsAAAAAAur-h7cYlZuGJTmijNHmOi5kFH7"
+        };
+    </script>
     <div id="site-header"></div>
 
     <!-- Page Header -->
@@ -313,32 +321,37 @@
                         </div>
                         
                         <!-- Contact Form -->
-                        <form id="appointment-form" class="space-y-4">
+                        <form id="appointment-form" data-form-type="appointment-request" class="space-y-4">
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-dark font-josefin font-semibold mb-2">First Name *</label>
-                                    <input type="text" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
+                                    <input type="text" name="first_name" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
                                 </div>
                                 <div>
                                     <label class="block text-dark font-josefin font-semibold mb-2">Last Name *</label>
-                                    <input type="text" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
+                                    <input type="text" name="last_name" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
                                 </div>
                             </div>
                             <div>
                                 <label class="block text-dark font-josefin font-semibold mb-2">Email *</label>
-                                <input type="email" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
+                                <input type="email" name="email" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
                             </div>
                             <div>
                                 <label class="block text-dark font-josefin font-semibold mb-2">Phone *</label>
-                                <input type="tel" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
+                                <input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
                             </div>
                             <div>
                                 <label class="block text-dark font-josefin font-semibold mb-2">Notes (Optional)</label>
-                                <textarea rows="3" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none resize-none" placeholder="Tell me about your real estate needs..."></textarea>
+                                <textarea name="notes" rows="3" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none resize-none" placeholder="Tell me about your real estate needs..."></textarea>
                             </div>
+                            <input type="hidden" name="appointment_type" value="buyer">
+                            <input type="hidden" name="appointment_date" value="">
+                            <input type="hidden" name="appointment_time" value="">
+                            <div class="g-recaptcha" data-sitekey=""></div>
                             <button type="submit" class="btn-primary w-full text-white py-4 rounded-lg font-josefin font-semibold tracking-wider uppercase">
                                 Confirm Appointment
                             </button>
+                            <p class="form-status text-center text-sm text-gray-text"></p>
                         </form>
                     </div>
                 </div>
@@ -408,6 +421,8 @@
                 dayCell.addEventListener('click', () => {
                     document.querySelectorAll('.day-cell').forEach(c => c.classList.remove('selected'));
                     dayCell.classList.add('selected');
+                    const dateField = document.querySelector('input[name="appointment_date"]');
+                    if (dateField) dateField.value = `${currentMonthEl.textContent.trim()} ${day}`;
                 });
                 
                 calendarGrid.appendChild(dayCell);
@@ -431,6 +446,8 @@
             slot.addEventListener('click', () => {
                 document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
                 slot.classList.add('selected');
+                const timeField = document.querySelector('input[name="appointment_time"]');
+                if (timeField) timeField.value = slot.textContent.trim();
             });
         });
         
@@ -445,14 +462,11 @@
                 type.classList.add('selected');
                 type.classList.remove('border-gray-200');
                 type.classList.add('border-primary');
+                const typeField = document.querySelector('input[name="appointment_type"]');
+                if (typeField) typeField.value = type.getAttribute('data-type') || '';
             });
         });
-        
-        // Form submission
-        document.getElementById('appointment-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you! Your appointment request has been submitted. I will confirm with you shortly.');
-        });
     </script>
+    <script src="js/forms.js"></script>
 </body>
 </html>

@@ -46,6 +46,7 @@
     </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -152,6 +153,13 @@
     </style>
 </head>
 <body class="bg-white text-dark" data-page="contact">
+    <script>
+        window.KORA_SITE_CONFIG = {
+            apiBaseUrl: "https://kora-agent.grubtok.com",
+            businessId: "e24f2505-6638-440f-b23e-cd11e77d4948",
+            recaptchaSiteKey: "6LcsdJYsAAAAAAur-h7cYlZuGJTmijNHmOi5kFH7"
+        };
+    </script>
     <div id="site-header"></div>
 
     <!-- Page Header -->
@@ -267,31 +275,31 @@
                 </div>
                 
                 <div class="slide-right">
-                    <form class="bg-white p-8 md:p-10 rounded-xl shadow-lg">
+                    <form id="contact-form" data-form-type="contact" class="bg-white p-8 md:p-10 rounded-xl shadow-lg">
                         <div class="grid md:grid-cols-2 gap-6 mb-6">
                             <div>
                                 <label class="block text-dark font-josefin font-semibold mb-2">First Name *</label>
-                                <input type="text" class="input-field w-full px-4 py-3 rounded-lg bg-off-white" placeholder="John" required>
+                                <input type="text" name="first_name" class="input-field w-full px-4 py-3 rounded-lg bg-off-white" placeholder="John" required>
                             </div>
                             <div>
                                 <label class="block text-dark font-josefin font-semibold mb-2">Last Name *</label>
-                                <input type="text" class="input-field w-full px-4 py-3 rounded-lg bg-off-white" placeholder="Doe" required>
+                                <input type="text" name="last_name" class="input-field w-full px-4 py-3 rounded-lg bg-off-white" placeholder="Doe" required>
                             </div>
                         </div>
                         
                         <div class="mb-6">
                             <label class="block text-dark font-josefin font-semibold mb-2">Email *</label>
-                            <input type="email" class="input-field w-full px-4 py-3 rounded-lg bg-off-white" placeholder="john@example.com" required>
+                            <input type="email" name="email" class="input-field w-full px-4 py-3 rounded-lg bg-off-white" placeholder="john@example.com" required>
                         </div>
                         
                         <div class="mb-6">
                             <label class="block text-dark font-josefin font-semibold mb-2">Phone</label>
-                            <input type="tel" class="input-field w-full px-4 py-3 rounded-lg bg-off-white" placeholder="(914) 000-0000">
+                            <input type="tel" name="phone" class="input-field w-full px-4 py-3 rounded-lg bg-off-white" placeholder="(914) 000-0000">
                         </div>
                         
                         <div class="mb-6">
                             <label class="block text-dark font-josefin font-semibold mb-2">I'm Interested In *</label>
-                            <select class="input-field w-full px-4 py-3 rounded-lg bg-off-white" required>
+                            <select name="interest" class="input-field w-full px-4 py-3 rounded-lg bg-off-white" required>
                                 <option value="">Select an option</option>
                                 <option value="buying">Buying a Home</option>
                                 <option value="selling">Selling My Home</option>
@@ -303,12 +311,14 @@
                         
                         <div class="mb-6">
                             <label class="block text-dark font-josefin font-semibold mb-2">Message</label>
-                            <textarea rows="5" class="input-field w-full px-4 py-3 rounded-lg bg-off-white resize-none" placeholder="Tell me about your real estate needs..."></textarea>
+                            <textarea name="message" rows="5" class="input-field w-full px-4 py-3 rounded-lg bg-off-white resize-none" placeholder="Tell me about your real estate needs..."></textarea>
                         </div>
+                        <div class="g-recaptcha mb-6" data-sitekey=""></div>
                         
                         <button type="submit" class="btn-primary w-full text-white py-4 rounded-lg font-josefin font-semibold tracking-wider uppercase">
                             Send Message
                         </button>
+                        <p class="form-status text-center text-sm text-gray-text mt-4"></p>
                     </form>
                 </div>
             </div>
@@ -333,5 +343,6 @@
     <div id="site-footer"></div>
     <script src="js/includes.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
 </body>
 </html>

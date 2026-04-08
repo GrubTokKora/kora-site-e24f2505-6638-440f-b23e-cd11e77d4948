@@ -46,6 +46,7 @@
     </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -91,6 +92,13 @@
     </style>
 </head>
 <body class="bg-white text-dark" data-page="evaluation">
+    <script>
+        window.KORA_SITE_CONFIG = {
+            apiBaseUrl: "https://kora-agent.grubtok.com",
+            businessId: "e24f2505-6638-440f-b23e-cd11e77d4948",
+            recaptchaSiteKey: "6LcsdJYsAAAAAAur-h7cYlZuGJTmijNHmOi5kFH7"
+        };
+    </script>
     <div id="site-header"></div>
 
     <!-- Page Header -->
@@ -172,38 +180,38 @@
                     <div class="bg-off-white p-8 md:p-10 rounded-xl shadow-lg">
                         <h3 class="text-2xl font-josefin font-semibold text-dark mb-6">Request Your Free Valuation</h3>
                         
-                        <form id="valuation-form" class="space-y-6">
+                        <form id="valuation-form" data-form-type="home-valuation" class="space-y-6">
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-dark font-josefin font-semibold mb-2">First Name *</label>
-                                    <input type="text" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="John" required>
+                                    <input type="text" name="first_name" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="John" required>
                                 </div>
                                 <div>
                                     <label class="block text-dark font-josefin font-semibold mb-2">Last Name *</label>
-                                    <input type="text" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="Doe" required>
+                                    <input type="text" name="last_name" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="Doe" required>
                                 </div>
                             </div>
                             
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-dark font-josefin font-semibold mb-2">Email *</label>
-                                    <input type="email" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="john@example.com" required>
+                                    <input type="email" name="email" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="john@example.com" required>
                                 </div>
                                 <div>
                                     <label class="block text-dark font-josefin font-semibold mb-2">Phone *</label>
-                                    <input type="tel" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="(914) 000-0000" required>
+                                    <input type="tel" name="phone" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="(914) 000-0000" required>
                                 </div>
                             </div>
                             
                             <div>
                                 <label class="block text-dark font-josefin font-semibold mb-2">Property Address *</label>
-                                <input type="text" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="123 Main Street, Rye, NY 10580" required>
+                                <input type="text" name="property_address" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="123 Main Street, Rye, NY 10580" required>
                             </div>
                             
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-dark font-josefin font-semibold mb-2">Property Type</label>
-                                    <select class="input-field w-full px-4 py-3 rounded-lg bg-white">
+                                    <select name="property_type" class="input-field w-full px-4 py-3 rounded-lg bg-white">
                                         <option value="">Select type</option>
                                         <option value="single-family">Single Family</option>
                                         <option value="condo">Condominium</option>
@@ -215,7 +223,7 @@
                                 </div>
                                 <div>
                                     <label class="block text-dark font-josefin font-semibold mb-2">Bedrooms</label>
-                                    <select class="input-field w-full px-4 py-3 rounded-lg bg-white">
+                                    <select name="bedrooms" class="input-field w-full px-4 py-3 rounded-lg bg-white">
                                         <option value="">Select</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -230,7 +238,7 @@
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-dark font-josefin font-semibold mb-2">Bathrooms</label>
-                                    <select class="input-field w-full px-4 py-3 rounded-lg bg-white">
+                                    <select name="bathrooms" class="input-field w-full px-4 py-3 rounded-lg bg-white">
                                         <option value="">Select</option>
                                         <option value="1">1</option>
                                         <option value="1.5">1.5</option>
@@ -242,18 +250,20 @@
                                 </div>
                                 <div>
                                     <label class="block text-dark font-josefin font-semibold mb-2">Approx. Sq Ft</label>
-                                    <input type="number" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="e.g., 2500">
+                                    <input type="number" name="square_feet" class="input-field w-full px-4 py-3 rounded-lg bg-white" placeholder="e.g., 2500">
                                 </div>
                             </div>
                             
                             <div>
                                 <label class="block text-dark font-josefin font-semibold mb-2">Additional Details</label>
-                                <textarea rows="4" class="input-field w-full px-4 py-3 rounded-lg bg-white resize-none" placeholder="Any recent renovations, special features, or questions about your property..."></textarea>
+                                <textarea name="additional_details" rows="4" class="input-field w-full px-4 py-3 rounded-lg bg-white resize-none" placeholder="Any recent renovations, special features, or questions about your property..."></textarea>
                             </div>
+                            <div class="g-recaptcha" data-sitekey=""></div>
                             
                             <button type="submit" class="btn-primary w-full text-white py-4 rounded-lg font-josefin font-semibold tracking-wider uppercase">
                                 Get My Free Valuation
                             </button>
+                            <p class="form-status text-center text-sm text-gray-text"></p>
                         </form>
                     </div>
                 </div>
@@ -382,12 +392,6 @@
     <div id="site-footer"></div>
     <script src="js/includes.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        // Form submission
-        document.getElementById('valuation-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you! Your home valuation request has been submitted. I will prepare your comprehensive market analysis and send it to you within 24-48 hours.');
-        });
-    </script>
+    <script src="js/forms.js"></script>
 </body>
 </html>
