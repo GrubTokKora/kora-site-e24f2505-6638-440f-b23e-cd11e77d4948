@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule an Appointment | Connie Stetler Real Estate</title>
+    <meta name="description" content="Schedule a consultation with Connie Stetler. Flexible appointment times available for buyers and sellers in Westchester, Putnam, and Fairfield Counties.">
+    <meta property="og:title" content="Schedule an Appointment | Connie Stetler Real Estate">
+    <meta property="og:description" content="Schedule a consultation with Connie Stetler. Flexible appointment times available for buyers and sellers in Westchester, Putnam, and Fairfield Counties.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://static.wixstatic.com/media/ccf3fb_f3378c90544e4280ba2bd73b1331a4d2~mv2.png/v1/fill/w_395,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo.png">
+    <meta property="og:url" content="https://www.conniestetlerhomes.com/appt">
+    <link rel="icon" href="https://static.wixstatic.com/media/ccf3fb_f3378c90544e4280ba2bd73b1331a4d2~mv2.png/v1/fill/w_395,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo.png">
+    <link rel="shortcut icon" href="https://static.wixstatic.com/media/ccf3fb_f3378c90544e4280ba2bd73b1331a4d2~mv2.png/v1/fill/w_395,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo.png">
+    <link rel="apple-touch-icon" href="https://static.wixstatic.com/media/ccf3fb_f3378c90544e4280ba2bd73b1331a4d2~mv2.png/v1/fill/w_395,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo.png">
+    <link rel="canonical" href="https://www.conniestetlerhomes.com/appt">
+    <link rel="preload" as="image" href="https://static.wixstatic.com/media/ccf3fb_b9833cca2d1e4e309383471bed1ec745~mv2.webp/v1/fill/w_1280,h_730,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ccf3fb_b9833cca2d1e4e309383471bed1ec745~mv2.webp">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Connie Stetler",
+      "description": "Connie Stetler is a licensed associate broker with over three decades of real estate experience in Westchester, Putnam, and Fairfield Counties, NY & CT. Specializing in waterfront properties, she guides clients through buying, renovating, and selling homes with a strategic, comprehensive approach.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "78 Purchase St",
+        "addressLocality": "Rye",
+        "addressRegion": "NY",
+        "postalCode": "10580",
+        "addressCountry": "US"
+      },
+      "telephone": "+19149802402",
+      "email": "ConnieStetler@Raveis.com",
+      "openingHours": [
+        "Mo-Fr 07:30-21:00",
+        "Sa 07:30-19:00",
+        "Su 09:00-18:00"
+      ],
+      "image": "https://static.wixstatic.com/media/ccf3fb_f3378c90544e4280ba2bd73b1331a4d2~mv2.png/v1/fill/w_395,h_170,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo.png",
+      "url": "https://www.conniestetlerhomes.com/",
+      "review": [
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "author": { "@type": "Person", "name": "Arlene Gonzalez-Pagan" }, "reviewBody": "Connie is truly one of a kind! We couldn’t have asked for a better realtor to guide us through the sale of our condo. Thanks to her expertise and strategic approach, we had an offer during our very first open house!" },
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "author": { "@type": "Person", "name": "Shelly A" }, "reviewBody": "Connie is truly exceptional. Over the years, she has expertly guided me through multiple real estate transactions, both buying and selling. Her extensive knowledge, unwavering professionalism, and remarkable patience set her apart." }
+      ]
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#9A7753',
+                        'primary-dark': '#7A5D40',
+                        'primary-light': '#B79A79',
+                        dark: '#111111',
+                        'gray-text': '#5D5D5D',
+                        cream: '#F3ECE4',
+                        'off-white': '#FAF8F5',
+                    },
+                    fontFamily: {
+                        'josefin': ['Cormorant Garamond', 'serif'],
+                        'poppins': ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * { scroll-behavior: smooth; }
+        body { font-family: 'Lato', sans-serif; overflow-x: hidden; }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #9A7753 0%, #B79A79 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-primary {
+            background: #111111;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(17, 17, 17, 0.24);
+        }
+        
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: #9A7753;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .mobile-menu.active { transform: translateX(0); }
+        
+        .fade-in { opacity: 0; transform: translateY(30px); }
+        .slide-left { opacity: 0; transform: translateX(-50px); }
+        .slide-right { opacity: 0; transform: translateX(50px); }
+        .scale-in { opacity: 0; transform: scale(0.9); }
+        
+        .time-slot {
+            transition: all 0.3s ease;
+        }
+        
+        .time-slot:hover {
+            border-color: #9A7753;
+            background: rgba(154, 119, 83, 0.08);
+        }
+        
+        .time-slot.selected {
+            background: #9A7753;
+            color: white;
+            border-color: #9A7753;
+        }
+        
+        .appointment-type {
+            transition: all 0.3s ease;
+        }
+        
+        .appointment-type:hover, .appointment-type.selected {
+            border-color: #9A7753;
+            background: rgba(154, 119, 83, 0.08);
+        }
+        
+        .appointment-type.selected {
+            background: rgba(154, 119, 83, 0.14);
+        }
+        
+        .day-cell {
+            transition: all 0.3s ease;
+        }
+        
+        .day-cell:hover:not(.disabled) {
+            background: rgba(154, 119, 83, 0.14);
+        }
+        
+        .day-cell.selected {
+            background: #9A7753;
+            color: white;
+        }
+        
+        .day-cell.disabled {
+            color: #D1D5DB;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="bg-white text-dark" data-page="appt">
+    <div id="site-header"></div>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-16 bg-off-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-primary font-poppins text-sm tracking-widest uppercase mb-4 fade-in">Book Your Consultation</p>
+            <h1 class="text-5xl md:text-6xl font-josefin font-light text-dark mb-6 fade-in">
+                Schedule an <span class="font-semibold text-gradient">Appointment</span>
+            </h1>
+            <p class="text-gray-text font-poppins text-lg max-w-2xl mx-auto fade-in">
+                Choose a convenient time for us to discuss your real estate needs. I offer flexible scheduling including evenings and weekends.
+            </p>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Left Side - Appointment Info -->
+                <div class="lg:col-span-1 slide-left">
+                    <div class="bg-off-white p-8 rounded-xl">
+                        <h3 class="text-2xl font-josefin font-semibold text-dark mb-6">Appointment Types</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="appointment-type selected p-4 rounded-lg border-2 border-primary cursor-pointer" data-type="buyer">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-home text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-josefin font-semibold text-dark">Buyer Consultation</p>
+                                        <p class="text-sm text-gray-text font-poppins">30 min</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="appointment-type p-4 rounded-lg border-2 border-gray-200 cursor-pointer" data-type="seller">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-tag text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-josefin font-semibold text-dark">Seller Consultation</p>
+                                        <p class="text-sm text-gray-text font-poppins">45 min</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="appointment-type p-4 rounded-lg border-2 border-gray-200 cursor-pointer" data-type="valuation">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-calculator text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-josefin font-semibold text-dark">Home Valuation</p>
+                                        <p class="text-sm text-gray-text font-poppins">30 min</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="appointment-type p-4 rounded-lg border-2 border-gray-200 cursor-pointer" data-type="phone">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-phone text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-josefin font-semibold text-dark">Phone Call</p>
+                                        <p class="text-sm text-gray-text font-poppins">15 min</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 pt-8 border-t border-gray-200">
+                            <h4 class="font-josefin font-semibold text-dark mb-4">Contact Info</h4>
+                            <div class="space-y-3">
+                                <p class="text-gray-text font-poppins text-sm">
+                                    <i class="fas fa-phone text-primary mr-2"></i> 914.980.2402
+                                </p>
+                                <p class="text-gray-text font-poppins text-sm">
+                                    <i class="fas fa-envelope text-primary mr-2"></i> ConnieStetler@Raveis.com
+                                </p>
+                                <p class="text-gray-text font-poppins text-sm">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2"></i> 78 Purchase St, Rye, NY
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Calendar & Form -->
+                <div class="lg:col-span-2 slide-right">
+                    <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-josefin font-semibold text-dark mb-6">Select Date & Time</h3>
+                        
+                        <!-- Calendar -->
+                        <div class="mb-8">
+                            <div class="flex items-center justify-between mb-4">
+                                <button id="prev-month" class="w-10 h-10 rounded-full bg-off-white hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <h4 id="current-month" class="text-xl font-josefin font-semibold text-dark">April 2026</h4>
+                                <button id="next-month" class="w-10 h-10 rounded-full bg-off-white hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="grid grid-cols-7 gap-2 mb-2">
+                                <div class="text-center text-sm font-poppins text-gray-text py-2">Sun</div>
+                                <div class="text-center text-sm font-poppins text-gray-text py-2">Mon</div>
+                                <div class="text-center text-sm font-poppins text-gray-text py-2">Tue</div>
+                                <div class="text-center text-sm font-poppins text-gray-text py-2">Wed</div>
+                                <div class="text-center text-sm font-poppins text-gray-text py-2">Thu</div>
+                                <div class="text-center text-sm font-poppins text-gray-text py-2">Fri</div>
+                                <div class="text-center text-sm font-poppins text-gray-text py-2">Sat</div>
+                            </div>
+                            
+                            <div id="calendar-grid" class="grid grid-cols-7 gap-2">
+                                <!-- Calendar days will be generated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <!-- Time Slots -->
+                        <div class="mb-8">
+                            <h4 class="font-josefin font-semibold text-dark mb-4">Available Times</h4>
+                            <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">9:00 AM</button>
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">10:00 AM</button>
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">11:00 AM</button>
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">12:00 PM</button>
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">1:00 PM</button>
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">2:00 PM</button>
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">3:00 PM</button>
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">4:00 PM</button>
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">5:00 PM</button>
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">6:00 PM</button>
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">7:00 PM</button>
+                                <button class="time-slot py-3 px-4 rounded-lg border-2 border-gray-200 font-poppins text-sm">8:00 PM</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Form -->
+                        <form id="appointment-form" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-dark font-josefin font-semibold mb-2">First Name *</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
+                                </div>
+                                <div>
+                                    <label class="block text-dark font-josefin font-semibold mb-2">Last Name *</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-dark font-josefin font-semibold mb-2">Email *</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
+                            </div>
+                            <div>
+                                <label class="block text-dark font-josefin font-semibold mb-2">Phone *</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none" required>
+                            </div>
+                            <div>
+                                <label class="block text-dark font-josefin font-semibold mb-2">Notes (Optional)</label>
+                                <textarea rows="3" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary focus:outline-none resize-none" placeholder="Tell me about your real estate needs..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full text-white py-4 rounded-lg font-josefin font-semibold tracking-wider uppercase">
+                                Confirm Appointment
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-primary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-josefin font-light text-white mb-6">
+                Need Immediate <span class="font-semibold">Assistance?</span>
+            </h2>
+            <p class="text-white/90 font-poppins text-lg mb-10">
+                Call or email me directly for urgent inquiries. I'm here to help you with all your real estate needs.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="tel:9149802402" class="bg-white text-primary px-8 py-4 rounded font-josefin font-semibold tracking-wider uppercase hover:bg-gray-100 transition-all">
+                    <i class="fas fa-phone mr-2"></i> Call Now
+                </a>
+                <a href="contact.html" class="border-2 border-white text-white px-8 py-4 rounded font-josefin font-semibold tracking-wider uppercase hover:bg-white hover:text-primary transition-all">
+                    Send Message
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <script src="js/includes.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Calendar generation
+        const calendarGrid = document.getElementById('calendar-grid');
+        const currentMonthEl = document.getElementById('current-month');
+        let currentDate = new Date(2026, 3, 1); // April 2026
+        
+        function generateCalendar(date) {
+            calendarGrid.innerHTML = '';
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            currentMonthEl.textContent = `${monthNames[month]} ${year}`;
+            
+            // Empty cells for days before start of month
+            for (let i = 0; i < firstDay; i++) {
+                const emptyCell = document.createElement('div');
+                calendarGrid.appendChild(emptyCell);
+            }
+            
+            // Days
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayCell = document.createElement('button');
+                dayCell.className = 'day-cell py-3 rounded-lg font-poppins text-center hover:bg-primary/10 transition-colors';
+                dayCell.textContent = day;
+                
+                // Disable past days
+                const today = new Date();
+                const cellDate = new Date(year, month, day);
+                if (cellDate < today.setHours(0, 0, 0, 0)) {
+                    dayCell.classList.add('disabled');
+                    dayCell.disabled = true;
+                }
+                
+                dayCell.addEventListener('click', () => {
+                    document.querySelectorAll('.day-cell').forEach(c => c.classList.remove('selected'));
+                    dayCell.classList.add('selected');
+                });
+                
+                calendarGrid.appendChild(dayCell);
+            }
+        }
+        
+        generateCalendar(currentDate);
+        
+        document.getElementById('prev-month').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            generateCalendar(currentDate);
+        });
+        
+        document.getElementById('next-month').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            generateCalendar(currentDate);
+        });
+        
+        // Time slot selection
+        document.querySelectorAll('.time-slot').forEach(slot => {
+            slot.addEventListener('click', () => {
+                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                slot.classList.add('selected');
+            });
+        });
+        
+        // Appointment type selection
+        document.querySelectorAll('.appointment-type').forEach(type => {
+            type.addEventListener('click', () => {
+                document.querySelectorAll('.appointment-type').forEach(t => {
+                    t.classList.remove('selected');
+                    t.classList.remove('border-primary');
+                    t.classList.add('border-gray-200');
+                });
+                type.classList.add('selected');
+                type.classList.remove('border-gray-200');
+                type.classList.add('border-primary');
+            });
+        });
+        
+        // Form submission
+        document.getElementById('appointment-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you! Your appointment request has been submitted. I will confirm with you shortly.');
+        });
+    </script>
+</body>
+</html>
