@@ -1,0 +1,17 @@
+/* Source for assets/styles.css — compile externally */
+@import "tailwindcss";
+@source "../**/*.html";
+@source "../js/**/*.js";
+
+@theme {
+  --color-primary: #9A7753;
+  --color-primary-dark: #7A5D40;
+  --color-primary-light: #B79A79;
+  --color-dark: #111111;
+  --color-gray-text: #5D5D5D;
+  --color-cream: #F3ECE4;
+  --color-off-white: #FAF8F5;
+
+  --font-josefin: "Cormorant Garamond", serif;
+  --font-poppins: Lato, sans-serif;
+}

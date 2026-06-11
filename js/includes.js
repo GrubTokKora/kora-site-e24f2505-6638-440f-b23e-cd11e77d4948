@@ -130,10 +130,6 @@ function renderPartials() {
         footerMount.innerHTML = FOOTER_HTML;
     }
 
-    if (window.tailwind && typeof window.tailwind.refresh === 'function') {
-        window.tailwind.refresh();
-    }
-
     document.dispatchEvent(new CustomEvent('site:partials-loaded'));
 }
 
