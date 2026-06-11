@@ -9,7 +9,7 @@ const HEADER_HTML = `
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-24">
             <a href="index.html" class="flex items-center space-x-3 group">
-                <img src="https://quseprdus1.blob.core.windows.net/kora-business-images/user-media/e24f2505-6638-440f-b23e-cd11e77d4948/de8c94d8-887e-4625-825f-ec262dbc28df/1775656767_w84dqn.jpeg" alt="Connie Stetler Real Estate" class="h-12 w-auto transition-transform duration-300 group-hover:scale-105" width="160" height="48" loading="eager" decoding="async">
+                <img src="https://quseprdus1.blob.core.windows.net/kora-business-images/user-media/e24f2505-6638-440f-b23e-cd11e77d4948/de8c94d8-887e-4625-825f-ec262dbc28df/1775656767_w84dqn.jpeg" alt="Connie Stetler, Realtor NY &amp; CT" class="h-12 w-auto transition-transform duration-300 group-hover:scale-105" width="160" height="48" loading="eager" decoding="async">
             </a>
 
             <div class="hidden lg:flex items-center space-x-10">
@@ -91,9 +91,9 @@ const FOOTER_HTML = `
                 <h2 class="font-josefin font-semibold text-lg mb-6">Contact</h2>
                 <ul class="space-y-3">
                     <li class="text-gray-text font-poppins text-sm">914.980.2402</li>
-                    <li class="text-gray-text font-poppins text-sm">ConnieStetler@Raveis.com</li>
-                    <li class="text-gray-text font-poppins text-sm">78 Purchase Street</li>
-                    <li class="text-gray-text font-poppins text-sm">Rye, New York 10580</li>
+                    <li class="text-gray-text font-poppins text-sm">Connie.Stetler@Raveis.com</li>
+                    <li class="text-gray-text font-poppins text-sm">78 Purchase St</li>
+                    <li class="text-gray-text font-poppins text-sm">Rye, NY 10580</li>
                     <li class="text-gray-text font-poppins text-sm">Lic. #10301219833</li>
                 </ul>
             </div>
@@ -101,7 +101,7 @@ const FOOTER_HTML = `
 
         <div class="border-t border-black/10 pt-8 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <p class="text-gray-text/80 font-poppins text-sm">
-                &copy; 2024 Connie Stetler Real Estate. All rights reserved.
+                &copy; 2024 Connie Stetler, Realtor NY &amp; CT. All rights reserved.
             </p>
             <div class="flex items-center space-x-4">
                 <img src="https://quseprdus1.blob.core.windows.net/kora-business-images/user-media/e24f2505-6638-440f-b23e-cd11e77d4948/de8c94d8-887e-4625-825f-ec262dbc28df/1775656651_hx55ta.jpeg" alt="Equal Housing Opportunity" class="h-10" width="40" height="40" loading="lazy" decoding="async">
