@@ -228,65 +228,43 @@ p {
     }
 }
 
-/* Scroll-reveal: CSS view-timeline (no JS required — works on deploy immediately) */
+.fade-in,
+.slide-left,
+.slide-right,
+.scale-in {
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+/* Hero: animate on page load (no JS required) */
 @media (prefers-reduced-motion: no-preference) {
-    @supports (animation-timeline: view()) {
-        .fade-in {
-            animation: cs-fade-in 1s cubic-bezier(0.33, 1, 0.68, 1) both;
-            animation-timeline: view();
-            animation-range: entry 0% cover 40%;
-        }
-
-        .slide-left {
-            animation: cs-slide-left 1s cubic-bezier(0.33, 1, 0.68, 1) both;
-            animation-timeline: view();
-            animation-range: entry 0% cover 40%;
-        }
-
-        .slide-right {
-            animation: cs-slide-right 1s cubic-bezier(0.33, 1, 0.68, 1) both;
-            animation-timeline: view();
-            animation-range: entry 0% cover 40%;
-        }
-
-        .scale-in {
-            animation: cs-scale-in 0.8s cubic-bezier(0.33, 1, 0.68, 1) both;
-            animation-timeline: view();
-            animation-range: entry 0% cover 40%;
-        }
-
-        .scale-in:nth-child(2) { animation-delay: 100ms; }
-        .scale-in:nth-child(3) { animation-delay: 200ms; }
-        .scale-in:nth-child(4) { animation-delay: 300ms; }
-        .scale-in:nth-child(5) { animation-delay: 400ms; }
-        .scale-in:nth-child(6) { animation-delay: 500ms; }
+    .hero-bg .fade-in {
+        animation: cs-fade-in 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
     }
 
-    @supports not (animation-timeline: view()) {
-        .fade-in,
-        .slide-left,
-        .slide-right,
-        .scale-in {
-            opacity: 0;
-            will-change: opacity, transform;
-        }
-
-        .fade-in.is-visible {
-            animation: cs-fade-in 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-        }
-
-        .slide-left.is-visible {
-            animation: cs-slide-left 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-        }
-
-        .slide-right.is-visible {
-            animation: cs-slide-right 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-        }
-
-        .scale-in.is-visible {
-            animation: cs-scale-in 0.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-        }
+    .hero-bg .fade-in:nth-child(2) {
+        animation-delay: 150ms;
     }
+
+    .hero-bg .fade-in:nth-child(3) {
+        animation-delay: 300ms;
+    }
+}
+
+.fade-in.is-visible {
+    animation: cs-fade-in 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+.slide-left.is-visible {
+    animation: cs-slide-left 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+.slide-right.is-visible {
+    animation: cs-slide-right 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+.scale-in.is-visible {
+    animation: cs-scale-in 0.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {

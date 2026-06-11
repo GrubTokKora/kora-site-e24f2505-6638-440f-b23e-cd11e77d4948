@@ -94,10 +94,6 @@ function getScaleInDelay(element) {
 }
 
 function initScrollAnimations() {
-    if (typeof CSS !== 'undefined' && CSS.supports('animation-timeline', 'view()')) {
-        return;
-    }
-
     const elements = document.querySelectorAll(REVEAL_SELECTOR);
     if (!elements.length) return;
 
@@ -111,6 +107,10 @@ function initScrollAnimations() {
     const pending = [];
 
     elements.forEach((element) => {
+        if (element.closest('.hero-bg')) {
+            return;
+        }
+
         const delay = element.classList.contains('scale-in') ? getScaleInDelay(element) : 0;
         const rect = element.getBoundingClientRect();
 
