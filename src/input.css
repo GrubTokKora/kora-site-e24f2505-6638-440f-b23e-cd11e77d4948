@@ -14,4 +14,66 @@
 
   --font-josefin: "Cormorant Garamond", serif;
   --font-poppins: Lato, sans-serif;
+
+  --ease-reveal: cubic-bezier(0.33, 1, 0.68, 1);
+  --animate-cs-fade-in: cs-fade-in 1s var(--ease-reveal) forwards;
+  --animate-cs-slide-left: cs-slide-left 1s var(--ease-reveal) forwards;
+  --animate-cs-slide-right: cs-slide-right 1s var(--ease-reveal) forwards;
+  --animate-cs-scale-in: cs-scale-in 0.8s var(--ease-reveal) forwards;
+  --animate-cs-testimonial-in: cs-testimonial-in 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes cs-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cs-slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cs-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cs-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cs-testimonial-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

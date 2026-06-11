@@ -173,24 +173,94 @@ p {
     background: #ffffff;
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
+@keyframes cs-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.slide-left {
-    opacity: 0;
-    transform: translateX(-50px);
+@keyframes cs-slide-left {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.slide-right {
-    opacity: 0;
-    transform: translateX(50px);
+@keyframes cs-slide-right {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
+@keyframes cs-scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes cs-testimonial-in {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in,
+.slide-left,
+.slide-right,
 .scale-in {
     opacity: 0;
-    transform: scale(0.9);
+    will-change: opacity, transform;
+}
+
+.fade-in.is-visible {
+    animation: cs-fade-in 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+.slide-left.is-visible {
+    animation: cs-slide-left 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+.slide-right.is-visible {
+    animation: cs-slide-right 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+.scale-in.is-visible {
+    animation: cs-scale-in 0.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in,
+    .slide-left,
+    .slide-right,
+    .scale-in {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
 }
 
 .input-field {
@@ -247,6 +317,7 @@ p {
 
 .testimonial-slide.active {
     display: block;
+    animation: cs-testimonial-in 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .testimonial-dot {

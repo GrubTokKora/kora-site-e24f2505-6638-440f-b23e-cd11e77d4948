@@ -479,14 +479,11 @@
 <div class="kora-powered-by" style="display:flex;justify-content:flex-end;align-items:center;gap:0.35rem;padding:0.75rem 1rem;font-size:0.75rem;"><span style="color:#64748b">Powered by</span><a href="https://askkora.ai" target="_blank" rel="noopener noreferrer" style="text-decoration:none;font-weight:600;background:linear-gradient(135deg,#1E88E5,#7B1FA2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Kora</a></div>
 <!-- KORA_BRANDING_FOOTER_END -->
 </footer>
-<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="js/includes.js"></script>
 <script defer="" src="js/main.js"></script>
 <script defer="" src="js/forms.js"></script>
 <script>
         document.addEventListener('DOMContentLoaded', function () {
-            if (typeof gsap === 'undefined') return;
             const slides = Array.from(document.querySelectorAll('.testimonial-slide'));
             const dots = Array.from(document.querySelectorAll('.testimonial-dot'));
             const prevBtn = document.getElementById('testimonial-prev');
@@ -500,19 +497,6 @@
                 current = (index + slides.length) % slides.length;
                 slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
-
-                const activeSlide = slides[current];
-                gsap.fromTo(
-                    activeSlide,
-                    { opacity: 0, y: 14 },
-                    { opacity: 1, y: 0, duration: 0.65, ease: 'power2.out' }
-                );
-
-                gsap.fromTo(
-                    '.testimonial-dot.active',
-                    { scale: 0.85, opacity: 0.6 },
-                    { scale: 1.15, opacity: 1, duration: 0.25, ease: 'power2.out' }
-                );
             }
 
             function nextSlide() {
