@@ -94,6 +94,10 @@ function getScaleInDelay(element) {
 }
 
 function initScrollAnimations() {
+    if (typeof CSS !== 'undefined' && CSS.supports('animation-timeline', 'view()')) {
+        return;
+    }
+
     const elements = document.querySelectorAll(REVEAL_SELECTOR);
     if (!elements.length) return;
 
@@ -167,9 +171,19 @@ function initPageAnimations() {
     initHeroParallax();
 }
 
-initSharedUi();
-initPageAnimations();
-initSuggestedSearchesModal();
+function onDocumentReady(callback) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', callback);
+    } else {
+        callback();
+    }
+}
+
+onDocumentReady(() => {
+    initSharedUi();
+    initPageAnimations();
+    initSuggestedSearchesModal();
+});
+
 document.addEventListener('site:partials-loaded', initSharedUi);
 document.addEventListener('site:partials-loaded', initPageAnimations);
-document.addEventListener('DOMContentLoaded', initSuggestedSearchesModal);
