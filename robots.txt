@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://connie-stetler-staging.askkoraai.com/sitemap.xml
+Sitemap: https://connie-stetler-live.askkoraai.com/sitemap.xml
