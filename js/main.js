@@ -5,7 +5,6 @@ function initSuggestedSearchesModal() {
 
     modal.dataset.bound = 'true';
     const closeTriggers = modal.querySelectorAll('[data-close-modal]');
-    const fairHousingBtn = modal.querySelector('[data-fair-housing-notice]');
     let lastFocusedElement = null;
 
     function openModal() {
@@ -45,12 +44,6 @@ function initSuggestedSearchesModal() {
             closeModal();
         }
     });
-
-    if (fairHousingBtn) {
-        fairHousingBtn.addEventListener('click', (event) => {
-            event.preventDefault();
-        });
-    }
 }
 
 function initSharedUi() {
