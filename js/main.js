@@ -81,9 +81,9 @@ gsap.utils.toArray('.scale-in').forEach((element, index) => {
     });
 });
 
-if (document.querySelector('.hero-bg')) {
-    gsap.to('.hero-bg', {
-        backgroundPosition: '50% 100%',
+if (document.querySelector('.hero-bg-img')) {
+    gsap.to('.hero-bg-img', {
+        y: '15%',
         ease: 'none',
         scrollTrigger: {
             trigger: '.hero-bg',

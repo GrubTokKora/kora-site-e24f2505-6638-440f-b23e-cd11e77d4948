@@ -2,7 +2,9 @@
     const config = window.KORA_SITE_CONFIG || {};
     const apiBaseUrl = (config.apiBaseUrl || "https://kora-agent.grubtok.com").replace(/\/+$/, "");
     const businessId = config.businessId || "e24f2505-6638-440f-b23e-cd11e77d4948";
-    const recaptchaSiteKey = config.recaptchaSiteKey || "6LcsdJYsAAAAAAur-h7cYlZuGJTmijNHmOi5kFH7";
+    const recaptchaSiteKey = (config.recaptchaSiteKey || "").trim();
+
+    let recaptchaLoadPromise = null;
 
     function toTitleCase(value) {
         return (value || "")
@@ -34,6 +36,45 @@
             submitBtn.disabled = false;
             submitBtn.classList.remove("opacity-70", "cursor-not-allowed");
         }
+    }
+
+    function loadRecaptchaScript() {
+        if (typeof grecaptcha !== "undefined") {
+            return Promise.resolve();
+        }
+        if (recaptchaLoadPromise) {
+            return recaptchaLoadPromise;
+        }
+        recaptchaLoadPromise = new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = "https://www.google.com/recaptcha/api.js";
+            script.async = true;
+            script.defer = true;
+            script.onload = () => resolve();
+            script.onerror = () => reject(new Error("Failed to load reCAPTCHA"));
+            document.head.appendChild(script);
+        });
+        return recaptchaLoadPromise;
+    }
+
+    async function ensureRecaptchaReady(form) {
+        const recaptchaEl = form.querySelector(".g-recaptcha");
+        if (!recaptchaEl) return true;
+        if (!recaptchaSiteKey) return false;
+
+        recaptchaEl.setAttribute("data-sitekey", recaptchaSiteKey);
+
+        try {
+            await loadRecaptchaScript();
+        } catch {
+            return false;
+        }
+
+        if (typeof grecaptcha === "undefined") {
+            return false;
+        }
+
+        return true;
     }
 
     function getRecaptchaToken(form) {
@@ -83,6 +124,18 @@
         const formType = form.dataset.formType || "contact";
         const payloadData = collectFormData(form);
         const submitterEmail = payloadData.email || null;
+
+        if (!recaptchaSiteKey) {
+            setStatus(form, "Form temporarily unavailable.", true);
+            return;
+        }
+
+        const recaptchaReady = await ensureRecaptchaReady(form);
+        if (!recaptchaReady) {
+            setStatus(form, "Security check loading—please try again.", true);
+            return;
+        }
+
         const captchaToken = getRecaptchaToken(form);
 
         if (!captchaToken) {
@@ -129,6 +182,14 @@
         if (recaptchaEl && recaptchaSiteKey) {
             recaptchaEl.setAttribute("data-sitekey", recaptchaSiteKey);
         }
+
+        const warmRecaptcha = () => {
+            if (recaptchaSiteKey && recaptchaEl) {
+                ensureRecaptchaReady(form).catch(() => {});
+            }
+        };
+
+        form.addEventListener("focusin", warmRecaptcha, { once: true });
 
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
