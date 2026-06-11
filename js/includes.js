@@ -7,9 +7,9 @@ const ICON_LINKEDIN = '<svg class="icon icon-sm" xmlns="http://www.w3.org/2000/s
 const HEADER_HTML = `
 <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-white border-b border-black/5" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-24">
+        <div class="flex justify-between items-center h-16 lg:h-24">
             <a href="index.html" class="flex items-center space-x-3 group">
-                <img src="https://quseprdus1.blob.core.windows.net/kora-business-images/user-media/e24f2505-6638-440f-b23e-cd11e77d4948/de8c94d8-887e-4625-825f-ec262dbc28df/1775656767_w84dqn.jpeg" alt="Connie Stetler, Realtor NY &amp; CT" class="h-12 w-auto transition-transform duration-300 group-hover:scale-105" width="160" height="48" loading="eager" decoding="async">
+                <img src="https://quseprdus1.blob.core.windows.net/kora-business-images/user-media/e24f2505-6638-440f-b23e-cd11e77d4948/de8c94d8-887e-4625-825f-ec262dbc28df/1775656767_w84dqn.jpeg" alt="Connie Stetler, Realtor NY &amp; CT" class="h-8 lg:h-12 w-auto transition-transform duration-300 group-hover:scale-105" width="160" height="48" loading="eager" decoding="async">
             </a>
 
             <div class="hidden lg:flex items-center space-x-10">
