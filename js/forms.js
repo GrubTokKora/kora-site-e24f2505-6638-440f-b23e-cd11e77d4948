@@ -4,6 +4,12 @@
     const businessId = config.businessId || "e24f2505-6638-440f-b23e-cd11e77d4948";
     const recaptchaSiteKey = (config.recaptchaSiteKey || "").trim();
 
+    const SKIP_FORM_DATA_KEYS = new Set([
+        "g-recaptcha-response",
+        "captcha_token",
+        "h-captcha-response",
+    ]);
+
     let recaptchaLoadPromise = null;
 
     function toTitleCase(value) {
@@ -74,6 +80,19 @@
             return false;
         }
 
+        if (!recaptchaEl.getAttribute("data-widget-id") && typeof grecaptcha.render === "function") {
+            try {
+                const widgetId = grecaptcha.render(recaptchaEl, {
+                    sitekey: recaptchaSiteKey,
+                });
+                if (widgetId != null) {
+                    recaptchaEl.setAttribute("data-widget-id", String(widgetId));
+                }
+            } catch (error) {
+                // Widget may already be rendered by implicit g-recaptcha bootstrap.
+            }
+        }
+
         return true;
     }
 
@@ -81,6 +100,10 @@
         if (!recaptchaSiteKey || typeof grecaptcha === "undefined") return "";
         const recaptchaEl = form.querySelector(".g-recaptcha");
         if (!recaptchaEl) return "";
+        const widgetId = recaptchaEl.getAttribute("data-widget-id");
+        if (widgetId) {
+            return grecaptcha.getResponse(Number(widgetId)) || "";
+        }
         return grecaptcha.getResponse() || "";
     }
 
@@ -88,34 +111,57 @@
         const formData = new FormData(form);
         const result = {};
         formData.forEach((value, key) => {
-            if (key === "g-recaptcha-response") return;
-            result[key] = typeof value === "string" ? value.trim() : value;
+            if (SKIP_FORM_DATA_KEYS.has(key)) return;
+            const trimmed = typeof value === "string" ? value.trim() : value;
+            if (trimmed === "" || trimmed == null) return;
+            result[key] = trimmed;
         });
 
         const firstName = result.first_name || "";
         const lastName = result.last_name || "";
-        const fullName = [firstName, lastName].filter(Boolean).join(" ").trim();
-        if (fullName) {
-            result.full_name = fullName;
+        const combinedName = [firstName, lastName].filter(Boolean).join(" ").trim();
+        if (combinedName) {
+            result.name = combinedName;
+            delete result.first_name;
+            delete result.last_name;
+        } else if (result.full_name) {
+            result.name = result.full_name;
+            delete result.full_name;
+        } else if (result.fullName) {
+            result.name = result.fullName;
+            delete result.fullName;
         }
 
-        const selectedDate = document.querySelector(".day-cell.selected");
+        if (!result.message && result.additional_details) {
+            result.message = result.additional_details;
+            delete result.additional_details;
+        }
+        if (!result.message && result.notes) {
+            result.message = result.notes;
+            delete result.notes;
+        }
+
+        const selectedDate = form.querySelector(".day-cell.selected") || document.querySelector(".day-cell.selected");
         if (selectedDate && !result.appointment_date) {
             const monthLabel = document.getElementById("current-month");
             const monthText = monthLabel ? monthLabel.textContent.trim() : "";
-            result.appointment_date = monthText ? `${monthText} ${selectedDate.textContent.trim()}` : selectedDate.textContent.trim();
+            result.appointment_date = monthText
+                ? `${monthText} ${selectedDate.textContent.trim()}`
+                : selectedDate.textContent.trim();
         }
 
-        const selectedTime = document.querySelector(".time-slot.selected");
+        const selectedTime = form.querySelector(".time-slot.selected") || document.querySelector(".time-slot.selected");
         if (selectedTime && !result.appointment_time) {
             result.appointment_time = selectedTime.textContent.trim();
         }
 
-        const selectedType = document.querySelector(".appointment-type.selected");
+        const selectedType = form.querySelector(".appointment-type.selected") || document.querySelector(".appointment-type.selected");
         if (selectedType && !result.appointment_type) {
             const type = selectedType.getAttribute("data-type") || "";
-            result.appointment_type = type;
-            result.appointment_type_label = toTitleCase(type);
+            if (type) {
+                result.appointment_type = type;
+                result.appointment_type_label = toTitleCase(type);
+            }
         }
 
         return result;
@@ -168,7 +214,13 @@
 
             form.reset();
             if (typeof grecaptcha !== "undefined") {
-                grecaptcha.reset();
+                const recaptchaEl = form.querySelector(".g-recaptcha");
+                const widgetId = recaptchaEl ? recaptchaEl.getAttribute("data-widget-id") : null;
+                if (widgetId) {
+                    grecaptcha.reset(Number(widgetId));
+                } else {
+                    grecaptcha.reset();
+                }
             }
             setStatus(form, "Thank you! Your submission has been received.", false);
         } catch (error) {
