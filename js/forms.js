@@ -88,6 +88,7 @@
         const formData = new FormData(form);
         const result = {};
         formData.forEach((value, key) => {
+            if (key === "g-recaptcha-response") return;
             result[key] = typeof value === "string" ? value.trim() : value;
         });
 
