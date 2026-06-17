@@ -17,6 +17,7 @@ const HEADER_HTML = `
                 <a href="about.html" data-nav="about" class="nav-link text-dark font-josefin text-base uppercase hover:text-primary transition-colors">About</a>
                 <a href="buy.html" data-nav="buy" class="nav-link text-dark font-josefin text-base uppercase hover:text-primary transition-colors">Buy</a>
                 <a href="sell.html" data-nav="sell" class="nav-link text-dark font-josefin text-base uppercase hover:text-primary transition-colors">Sell</a>
+                <a href="blog.html" data-nav="blog" class="nav-link text-dark font-josefin text-base uppercase hover:text-primary transition-colors">Blog</a>
                 <a href="contact.html" data-nav="contact" class="nav-link text-dark font-josefin text-base uppercase hover:text-primary transition-colors">Contact</a>
                 <a href="https://www.raveis.com/contact/homevaluationwizard?SITE=agt&AGT=9216&" target="_blank" data-nav="appt" class="btn-primary text-white px-6 py-3 font-josefin text-xs">Home Evaluation</a>
             </div>
@@ -37,6 +38,7 @@ const HEADER_HTML = `
                 <a href="about.html" data-nav="about" class="block text-dark font-josefin text-lg hover:text-primary transition-colors">About</a>
                 <a href="buy.html" data-nav="buy" class="block text-dark font-josefin text-lg hover:text-primary transition-colors">Buy</a>
                 <a href="sell.html" data-nav="sell" class="block text-dark font-josefin text-lg hover:text-primary transition-colors">Sell</a>
+                <a href="blog.html" data-nav="blog" class="block text-dark font-josefin text-lg hover:text-primary transition-colors">Blog</a>
                 <a href="contact.html" data-nav="contact" class="block text-dark font-josefin text-lg hover:text-primary transition-colors">Contact</a>
                 <a href="https://www.raveis.com/contact/homevaluationwizard?SITE=agt&AGT=9216&" target="_blank" data-nav="appt" class="block btn-primary text-white px-6 py-3 font-josefin text-center mt-8 text-xs">Home Evaluation</a>
             </div>
