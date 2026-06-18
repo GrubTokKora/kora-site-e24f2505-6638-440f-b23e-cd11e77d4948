@@ -25,7 +25,7 @@
         const statusEl = form.querySelector(".form-status");
         if (!statusEl) return;
         statusEl.textContent = text;
-        statusEl.classList.remove("text-red-600", "text-green-600", "text-gray-text");
+        statusEl.classList.remove("text-red-600", "text-green-600", "text-[#5D5D5D]");
         statusEl.classList.add(isError ? "text-red-600" : "text-green-600");
     }
 
