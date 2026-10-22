@@ -8,8 +8,9 @@
   --color-primary: #9A7753;
   --color-secondary: #FAF8F5;
   --color-accent: #B79A79;
-  --font-heading: "Cormorant Garamond", serif;
-  --font-body: Lato, sans-serif;
+  --font-heading: var(--kora-font-heading, "Cormorant Garamond"), serif;
+  --font-body: var(--kora-font-body, Lato), sans-serif;
+  --font-accent: var(--kora-font-accent, var(--font-heading)), var(--font-heading);
 }
 /* KORA_BRAND_THEME_END */
 
