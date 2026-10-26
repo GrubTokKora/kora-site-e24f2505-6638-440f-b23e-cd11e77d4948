@@ -6,11 +6,12 @@ address — and body copy are deliberately not recorded here; read the page itse
 title: Connie Stetler, Realtor NY & CT | Rye, Westchester & Fairfield
 purpose: Home page for Connie Stetler, a licensed real estate associate broker serving Westchester, Putnam, and Fairfield counties.
 sections:
-- Hero introduction, branding, and quick action links: See What Your Home Is Worth, Book a Quick Call, Summer Fun Guide, Latest Newsletter, My Listings, List Your Home, BUY A HOME, Elite Concierge Services Brochure
+- Hero introduction, branding, and quick action links: See What Your Home Is Worth, Book a Quick Call, My Listings, List Your Home, BUY A HOME, Elite Concierge Services Brochure
 - `#about` "About Us" — Professional biography and agent introduction
 - "Areas I Serve" — County service areas covered by the agent: Westchester County, Putnam County, Fairfield County
 - "Areas of Expertise" — Real estate services offered by the agent: Seller Representation, Buyer Representation, Waterfront Specialists, Home Valuation, Buy a Home, Sell Your Home
 - `#reviews` "Client Reviews" — Testimonials from previous clients: Yoo Jin So, Shelly A, Stephanie O'Neill, Kathy Bender
+- `#blog` "Real Estate Insights" — Real estate insights introduction with link to blog: Blog
 - `#faq` "Frequently Asked Questions" — Answers to common real estate and service inquiries: What areas do you serve?, Do you help both buyers and sellers?, How do I get started?, What are your office hours?
 - "Let's Start Your Journey" — Contact details and inquiry form
 - `#suggested-searches-modal` "Suggested Searches" — Quick search links and external resources: Westchester County, NY, Fairfield County, CT, Open Houses, New Listings, Fair Housing Notice

@@ -116,6 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             businessId: "e24f2505-6638-440f-b23e-cd11e77d4948",
             recaptchaSiteKey: "6LcsdJYsAAAAAAur-h7cYlZuGJTmijNHmOi5kFH7"
         };
+        window.KORA_CONFIG = Object.assign(window.KORA_CONFIG || {}, window.KORA_SITE_CONFIG);
     </script>
 <header id="site-header"></header>
 <main>
@@ -143,12 +144,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             </a>
 <a class="bg-white text-[#111111] px-6 py-3 rounded font-josefin tracking-wide uppercase text-sm hover:bg-gray-100 transition-all" href="https://calendly.com/connie-stetler/10-minute-discovery-call" rel="noopener noreferrer" target="_blank">
                                 Book a Quick Call
-                            </a>
-<a class="bg-white text-[#111111] px-6 py-3 rounded font-josefin tracking-wide uppercase text-sm hover:bg-gray-100 transition-all" href="https://canva.link/lprhbqtaw8kpbqk" rel="noopener noreferrer" target="_blank">
-                                Summer Fun Guide
-                            </a>
-<a class="bg-white text-[#111111] px-6 py-3 rounded font-josefin tracking-wide uppercase text-sm hover:bg-gray-100 transition-all" href="https://www.raveis.com/home/video/?wm_video_id=g1ndf3ee4921m684&amp;autoplay=1&amp;wm_seek=0" target="_blank">
-                                Latest Newsletter
                             </a>
 <a class="bg-white text-[#111111] px-6 py-3 rounded font-josefin tracking-wide uppercase text-sm hover:bg-gray-100 transition-all" href="https://www.raveis.com/Agent/ConnieStetler?utm_source=just-listed-sold&utm_medium=email&utm_campaign=just-listed#listings" rel="noopener noreferrer" target="_blank">
                                 My Listings
@@ -376,6 +371,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 </section>
+<!-- Blog Section -->
+<section class="py-24 bg-white" id="blog">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center scale-in">
+<p class="text-primary font-poppins text-sm tracking-widest uppercase mb-4">Latest Insights</p>
+<h2 class="text-4xl md:text-5xl font-josefin font-light text-[#111111] mb-6">
+                    Real Estate <span class="font-semibold text-gradient">Insights</span>
+</h2>
+<p class="text-[#5D5D5D] font-poppins text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Explore expert guidance, market trends, and local guides for navigating your next move in New York and Connecticut.
+</p>
+<div class="flex justify-center">
+<a class="btn-primary text-white px-10 py-4 rounded font-josefin tracking-wider uppercase text-sm inline-block" href="blog.html">
+                    Blog
+</a>
+</div>
+</div>
+</section>
 <!-- FAQ Section -->
 <section class="py-24 bg-[#FAF8F5]" id="faq">
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -517,7 +529,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <label class="block text-[#111111] font-josefin font-semibold mb-2">Message</label>
 <textarea class="input-field w-full px-4 py-3 rounded-lg bg-white focus:outline-none resize-none" name="message" placeholder="Tell me about your real estate needs..." rows="4"></textarea>
 </div>
-<div class="g-recaptcha" data-sitekey=""></div>
+<div class="g-recaptcha" data-sitekey="6LcsdJYsAAAAAAur-h7cYlZuGJTmijNHmOi5kFH7"></div>
 <button class="btn-primary w-full text-white py-4 rounded-lg font-josefin font-semibold tracking-wider uppercase" type="submit">
                             Send Message
                         </button>
@@ -579,6 +591,93 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <footer id="site-footer">
 </footer>
+<script>
+(function () {
+  var form = document.getElementById('home-contact-form');
+  if (!form) return;
+  var cfg = window.KORA_SITE_CONFIG || window.KORA_CONFIG || {};
+  var apiBaseUrl = (cfg.apiBaseUrl || '').replace(/\/+$/, '');
+  var businessId = cfg.businessId;
+  var siteKey = cfg.recaptchaSiteKey;
+  var statusEl = form.querySelector('.form-status');
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var widget = form.querySelector('.g-recaptcha');
+
+  function setStatus(msg) { if (statusEl) statusEl.textContent = msg; }
+
+  if (!siteKey) {
+    if (widget && widget.parentNode) widget.parentNode.removeChild(widget);
+    if (submitBtn) submitBtn.disabled = true;
+    setStatus('Form temporarily unavailable.');
+  } else if (widget) {
+    widget.setAttribute('data-sitekey', siteKey);
+  }
+
+  function loadRecaptcha() {
+    if (!siteKey) return;
+    if (window.grecaptcha || document.querySelector('script[src*="recaptcha/api.js"]')) return;
+    var s = document.createElement('script');
+    s.src = 'https://www.google.com/recaptcha/api.js';
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+  form.addEventListener('focusin', loadRecaptcha, { once: true });
+
+  function val(name) {
+    var el = form.querySelector('[name="' + name + '"]');
+    return el ? (el.value || '').trim() : '';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    if (!siteKey) { setStatus('Form temporarily unavailable.'); return; }
+    loadRecaptcha();
+
+    var name = (val('first_name') + ' ' + val('last_name')).trim();
+    var email = val('email');
+    var message = val('message');
+    var phone = val('phone');
+
+    if (!name || !email || !message) { setStatus('Please enter your name, email and message.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setStatus('Please enter a valid email address.'); return; }
+    if (!window.grecaptcha || typeof window.grecaptcha.getResponse !== 'function') {
+      setStatus('Security check loading — please try again.');
+      return;
+    }
+    var token = window.grecaptcha.getResponse();
+    if (!token) { setStatus('Please complete the security check.'); return; }
+
+    var formData = { name: name, email: email, message: message };
+    if (phone) formData.phone = phone;
+
+    if (submitBtn) submitBtn.disabled = true;
+    setStatus('Sending…');
+
+    fetch(apiBaseUrl + '/api/v1/public/forms/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        business_id: businessId,
+        form_type: 'contact',
+        form_data: formData,
+        submitter_email: email,
+        captcha_token: token
+      })
+    }).then(function (res) {
+      if (!res.ok) throw new Error('Request failed');
+      form.reset();
+      setStatus('Thank you! Your message has been sent.');
+    }).catch(function () {
+      setStatus('Sorry, something went wrong. Please try again or call 914.980.2402.');
+    }).then(function () {
+      if (submitBtn) submitBtn.disabled = false;
+      try { window.grecaptcha.reset(); } catch (err) {}
+    });
+  });
+})();
+</script>
 <script src="js/includes.js"></script>
 <script defer="" src="js/main.js"></script>
 <script defer="" src="js/forms.js"></script>
