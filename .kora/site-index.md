@@ -11,7 +11,7 @@ sections:
 - "Areas I Serve" — County service areas covered by the agent: Westchester County, Putnam County, Fairfield County
 - "Areas of Expertise" — Real estate services offered by the agent: Seller Representation, Buyer Representation, Waterfront Specialists, Home Valuation, Buy a Home, Sell Your Home
 - `#reviews` "Client Reviews" — Testimonials from previous clients: Yoo Jin So, Shelly A, Stephanie O'Neill, Kathy Bender
-- `#blog` "Real Estate Insights" — Real estate insights introduction with link to blog: Blog
+- `#blog` "Real Estate Insights" — Real estate insights introduction and featured market analysis highlight banner: Is It a Good Time to Buy a House in Westchester County, NY? Here's What I'm Seeing in Q4 2026, Read Full Article, View All Posts
 - `#faq` "Frequently Asked Questions" — Answers to common real estate and service inquiries: What areas do you serve?, Do you help both buyers and sellers?, How do I get started?, What are your office hours?
 - "Let's Start Your Journey" — Contact details and inquiry form
 - `#suggested-searches-modal` "Suggested Searches" — Quick search links and external resources: Westchester County, NY, Fairfield County, CT, Open Houses, New Listings, Fair Housing Notice
@@ -50,11 +50,11 @@ sections:
 - blog posts grid: Is It a Good Time to Buy a House in Westchester County, NY? Here's What I'm Seeing in 2026, Navigating Your First Home Purchase: A Step-by-Step Guide, Buying a Home
 
 ## blog-post-westchester-2026.html → /blog-post-westchester-2026
-title: Is It a Good Time to Buy a House in Westchester County, NY? (2026) | Connie Stetler
-purpose: Analysis and local real estate advice on buying a home in Westchester County, NY in 2026.
+title: Is It a Good Time to Buy a House in Westchester County, NY? Here's What I'm Seeing in Q4 2026 | Connie Stetler
+purpose: Analysis and local real estate advice on buying a home in Westchester County, NY in Q4 2026.
 sections:
 - "Westchester Real Estate" — Post header content
-- "Is It a Good Time to Buy a House in Westchester County, NY? Here's What I'm Seeing in 2026" — Full article examining market trends, interest rates, buyer case studies, preapprovals, and agent representation
+- "Is It a Good Time to Buy a House in Westchester County, NY? Here's What I'm Seeing in Q4 2026" — Full article examining market trends, interest rates, buyer case studies, preapprovals, and agent representation
 
 ## blog-post.html → /blog-post
 title: Navigating Your First Home Purchase | Connie Stetler, Realtor NY & CT
