@@ -47,7 +47,7 @@ title: Blog | Connie Stetler, Realtor NY & CT
 purpose: Display real estate articles, guides, and insights for homebuyers and sellers.
 sections:
 - "Real Estate Insights" — page header
-- blog posts grid: Is It a Good Time to Buy a House in Westchester County, NY? Here's What I'm Seeing in 2026, Navigating Your First Home Purchase: A Step-by-Step Guide, Buying a Home
+- blog posts grid: Is It a Good Time to Buy a House in Westchester County, NY? Here's What I'm Seeing in Q4 2026, Navigating Your First Home Purchase: A Step-by-Step Guide, Buying a Home
 
 ## blog-post-westchester-2026.html → /blog-post-westchester-2026
 title: Is It a Good Time to Buy a House in Westchester County, NY? Here's What I'm Seeing in Q4 2026 | Connie Stetler
